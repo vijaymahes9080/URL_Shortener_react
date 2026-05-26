@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+client/.env
+client/.env.local
+server/.env
+server/.env.local
+
+# production / build
+client/build/
+client/dist/
+
+# misc
+.DS_Store
+*.log
