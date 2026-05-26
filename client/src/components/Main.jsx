@@ -5,8 +5,14 @@ import UrlList from "./UrlList"
 import { useState, useEffect } from "react"
 
 const getLocalStorage = () => {
-    if(!localStorage.getItem('links')) return []
-    return JSON.parse(localStorage.getItem('links'))
+    try {
+        const links = localStorage.getItem('links')
+        if (!links) return []
+        return JSON.parse(links)
+    } catch (e) {
+        console.error("Error reading links from localStorage", e)
+        return []
+    }
 }
 
 export default function Main() {

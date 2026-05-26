@@ -33,11 +33,15 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true, useUnifiedTopology: true
-})
-.then(() => console.log('Database connection successfull'))
-.catch((err) => console.log('error in db connection', err));
+if (process.env.DATABASE_URL) {
+    mongoose.connect(process.env.DATABASE_URL, {
+        useNewUrlParser: true, useUnifiedTopology: true
+    })
+    .then(() => console.log('Database connection successfull'))
+    .catch((err) => console.log('error in db connection', err));
+} else {
+    console.log('No DATABASE_URL provided. Operating in Local Offline JSON Database Mode.');
+}
 
 
 app.listen(PORT, () => { console.log(`Server running on ${PORT}`) })
