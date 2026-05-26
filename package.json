@@ -1,0 +1,17 @@
+{
+  "name": "url-shortener-root",
+  "version": "1.0.0",
+  "description": "Root configuration for full-stack React and Node URL Shortener",
+  "scripts": {
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
+    "build-client": "npm run build --prefix client",
+    "build": "npm run install-server && npm run install-client && npm run build-client",
+    "start": "node server/server.js",
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import PulseLoader from "react-spinners/PulseLoader";
-const apiUrl = process.env.REACT_APP_API_URL
+const apiUrl = process.env.REACT_APP_API_URL || ""
+
 
 export default function Shortener(props) {
     const [input, setInput] = useState("")
